@@ -9,6 +9,7 @@ import 'package:pharmacy/config/services/injection_container.dart';
 import 'package:pharmacy/config/services/navigator_service.dart';
 import 'package:pharmacy/core/network/api_constance.dart';
 import 'package:pharmacy/core/storage/cashhelper.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'config/services/injection_container.dart' as di;
 
@@ -39,23 +40,28 @@ class MyApp extends StatelessWidget {
           return previousState != currentState;
         },
         builder: (context, state) {
-          return MaterialApp(
-            navigatorKey: sl<NavigatorService>().navigatorKey,
-            title: 'title',
-            debugShowCheckedModeBanner: false,
-            theme: ThemeData(
-              colorScheme: ColorScheme.fromSeed(
-                seedColor: const Color(0xFF009688),
-              ),
-              useMaterial3: true,
-            ),
-            locale: state.locale,
-            supportedLocales: AppLocalizationsSetup.supportedLocales,
-            localeResolutionCallback:
-                AppLocalizationsSetup.localeResolutionCallback,
-            localizationsDelegates:
-                AppLocalizationsSetup.localizationsDelegates,
-            onGenerateRoute: AppRoutes.onGenerateRoute,
+  return ScreenUtilInit(
+      designSize: const Size(375, 832),
+      builder: (context, child) {
+              return MaterialApp(
+                navigatorKey: sl<NavigatorService>().navigatorKey,
+                title: 'title',
+                debugShowCheckedModeBanner: false,
+                theme: ThemeData(
+                  colorScheme: ColorScheme.fromSeed(
+                    seedColor: const Color(0xFF009688),
+                  ),
+                  useMaterial3: true,
+                ),
+                locale: state.locale,
+                supportedLocales: AppLocalizationsSetup.supportedLocales,
+                localeResolutionCallback:
+                    AppLocalizationsSetup.localeResolutionCallback,
+                localizationsDelegates:
+                    AppLocalizationsSetup.localizationsDelegates,
+                onGenerateRoute: AppRoutes.onGenerateRoute,
+              );
+            }
           );
         },
       ),

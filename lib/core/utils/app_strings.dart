@@ -15,4 +15,9 @@ class AppStrings {
   ///---------Laguage-------------
 
   static String login = "login";
+  static String no_data = "no_data";
+  static String sorry_no_data = "sorry_no_data";
+  static String swipe_down = "swipe_down";
+  static String download_failed = "download_failed";
+  static String slide_to_load_more = "slide_to_load_more";
 }
