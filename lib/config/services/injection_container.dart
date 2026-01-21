@@ -16,43 +16,29 @@ final sl = GetIt.instance;
 Future<void> init() async {
   //! Features
 
-  // Blocs
-
+   // localization
+  /// -----localizationCubit------
   sl.registerFactory<LocaleCubit>(
     () => LocaleCubit(getSavedLangUseCase: sl(), changeLangUseCase: sl()),
   );
-  // Use cases
+
+  /// --------useCases----------
   sl.registerLazySingleton<ChangeLangUseCase>(
     () => ChangeLangUseCase(langRepository: sl()),
   );
-
   sl.registerLazySingleton<GetSavedLangUseCase>(
     () => GetSavedLangUseCase(langRepository: sl()),
   );
 
-  // sl.registerLazySingleton<GetPlacesUseCase>(
-  //     () => GetPlacesUseCase(placesBaseRepository: sl()));
-
-  /// --------------------------
-  /// --------------------------
-  // Repository
+  /// --------Repository--------
   sl.registerLazySingleton<LangRepository>(
     () => LangRepositoryImpl(langLocalDataSource: sl()),
   );
-  // sl.registerLazySingleton<GetRecentlyAddedCompaniesBaseRepository>(
-  //     () => GetRecentlyAddedCompaniesRepository(sl()));
 
-  /// --------------------------
-  /// --------------------------
-  // Data Sources
-
+  /// --------DataSource--------
   sl.registerLazySingleton<LangLocalDataSource>(
     () => LangLocalDataSourceImpl(sharedPreferences: sl()),
   );
-
-  // sl.registerLazySingleton<login_with_mopile_BaseRemoteDataSource>(
-  //     () => login_with_mopile_RemoteDataSource());
-
   //! Core
 
   /// --------------------------
