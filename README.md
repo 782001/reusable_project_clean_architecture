@@ -187,7 +187,7 @@ class Loc {
 **Usage:**
 
 ```dart
-Text(Loc.tr('login'))
+Text(Loc.tr(context,'login'))
 ```
 ## AppStrings
 Optional with `AppStrings` keys:
@@ -202,7 +202,7 @@ class AppStrings {
 }
 
 
-Text(Loc.tr(AppStrings.login))
+Text(Loc.tr(context,AppStrings.login))
 ```
 
 ---
