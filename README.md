@@ -20,7 +20,7 @@ final navigator = sl<NavigatorService>();
 ------------Navigation--------
   nav().pushNamed(Routes.authWelcomeScreen);
 ------------Translation----------
-Loc.tr(AppStrings.login)
+Loc.tr(context,AppStrings.login)
 ```
 
 ## 1️⃣ NavigatorService

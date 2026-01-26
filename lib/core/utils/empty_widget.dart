@@ -26,17 +26,17 @@ class EmptyWidget extends StatelessWidget {
             SizedBox(height: topHeight, width: double.infinity),
             SizedBox(height: 24.h),
             Text(
-              title ?? Loc.tr(AppStrings.no_data),
+              title ?? Loc.tr(context, AppStrings.no_data),
               style: TextStyle(
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w600,
                 color: AppColors.blackLight,
-            ),
+              ),
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 8.h),
             Text(
-              subTitle ?? Loc.tr(AppStrings.sorry_no_data),
+              subTitle ?? Loc.tr(context, AppStrings.sorry_no_data),
               style: TextStyle(color: AppColors.blackLight),
               textAlign: TextAlign.center,
             ),

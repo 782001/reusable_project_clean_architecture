@@ -15,7 +15,7 @@ class CustomFooterWidget extends StatelessWidget {
       builder: (context, mode) {
         var body = '';
         if (mode == LoadStatus.idle) {
-          body = Loc.tr(AppStrings.swipe_down);
+          body = Loc.tr(context,AppStrings.swipe_down);
         } else if (mode == LoadStatus.loading) {
           return Padding(
             padding: EdgeInsets.only(top: 5.h, bottom: 30.h),
@@ -24,9 +24,9 @@ class CustomFooterWidget extends StatelessWidget {
             ),
           );
         } else if (mode == LoadStatus.failed) {
-          body = Loc.tr(AppStrings.download_failed);
+          body = Loc.tr(context,AppStrings.download_failed);
         } else if (mode == LoadStatus.canLoading) {
-          body = Loc.tr(AppStrings.slide_to_load_more);
+          body = Loc.tr(context,AppStrings.slide_to_load_more);
         } else {
           body = '';
         }
